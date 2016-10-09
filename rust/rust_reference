@@ -1,0 +1,51 @@
+in rust reference is the most important thing 
+and now i have something interesting 
+befoer ago we know that reference block the previous reference
+yes it is obvious, but how about '*'
+look at this code 
+struct Any<'a>
+{
+		a: &'a mut i32,
+		b: &'a mut i32,
+}
+struct Point<'a>{
+		x: &'a mut Any<'a>,
+		y: &'a mut Any<'a>,
+}
+fn main() {
+
+	    let mut x =&mut Point{x: &mut Any{a: &mut 10 ,b: &mut 20},y: &mut Any{a: &mut 20,b: &mut 28}};
+			{
+				let mut y=&mut x;
+				let mut z=&mut y;
+				*(***z).x.a=11;
+				*(***z).x.b=21;
+				*(***z).y.a=100;
+				*(***z).y.b=10;
+				println!("{},{}",*z.x.a,*z.y.b);	
+			}	
+			println!("{},{}",*x.x.a,*x.y.b);
+}
+yes it is very dirty but it gives me the something important
+we think *z is same as y so it is unable to complie it
+but this code works verry well why? *z is not a y
+*z is content of indirect reference to y 
+rust just not allow to use y directly so ***z is allowed	
+but if you use *z to mutate that value ,that is don't allow to do in rust
+because after reference previous value is not able to mutate because of
+rust rule so using with '*' to change middle reference is not allowed 
+and it is useless so ***z is useless and rust know this situation 
+that allow to use like this *z.x.a it is useless to use * 
+i think * is used to have resource content 
+it is like branch of tree it can strech widely but if you can the brach
+the leaves on the branch are died so rust forbid this cutting
+leaves are allow to use the resource from route it is unable to change 
+the branch because there leaves are live because of branch
+only leaves can use the resource so mention the stem 
+but tree doesn't have only one branch they have several branches 
+but it is same that they use the one resource 
+this is the reference role give resource the each branches and return to
+resource it is verry important this is the main concept of rust
+so if you program the project in rust 
+think the tree of resource!!
+thank you for watching this!!
