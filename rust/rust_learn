@@ -1,0 +1,312 @@
+use: use the package(it is like#include <> or using ~~)(ex: use std::io)
+	 -std:standard group-io:group of input,output
+	 					-cmp:group of compare
+	 -rand:rand group	-Rng:it maybe rand group
+extern: use the other package(ex: extern crate rand)
+	   it depends on 'Cargo.toml' if write the package on '[dependencies]'
+	   cargo downlaod the package and include on your rust file
+fn: it means function (ex: fn main(){}) if you want to make custom function
+	then do like this 
+	'
+	fn func(element1 : type1,element2 : type2) ->return_type
+	{
+		expression;
+		value_of_return
+	}
+	'it is important that 'value_of_return' don't have the semicolon
+	there are two things:
+	'Expression'(return value),'Statement'(don't return value)
+	there are two kind of statements:
+	'Declation statement','Expression statement'
+	'let' is the bind tool that set variable's statement
+	so each value have the 'statement' but if we use variable as 'expression
+	' then variable return the value, usually they don't return the value
+	declation statement defines the variable's statement 'let' is the
+	only declation statement tool and even declare the function body 
+	expression statement is the turning expression to statement
+	if you use the semicolon that means expression
+	so no semicolon means statement	  
+	let's look at the code 
+	'let x=5; let y=x+4;' 
+	fist 'x' have the statement '5' and if we use 'x' by exoression like
+	'x+5' then it return the value '9' so finally 'y' have the statement 
+	'9' so making function is the kind of expression statement 
+	'value_of_return' is the expression, it is the function 'func''s
+	statement 
+	if you want to 'return' you can write like this
+	'return expression;' 
+	if you don't want to return you can use like this
+	'fn fnuc() -> !{}' this function named 'deverging function' 
+	this function is used for error capturing and it cause error,
+	kill the whole process and it could be bind with any type;
+	unlike 'no return func()',this function means 'never return'
+	in return function have to return something but if you don't have
+	any return deverging function would be helpful
+	rust also have 'function pointer' like this
+	'let f: fn(type) -> return_type' so you can use like this
+	'let f=function_name; f(something)'
+	if you want to make member function (like c++ class member function) do like this
+	'struct Circle{
+		x: f64,
+		y: f64,
+		readius: f64,
+	}
+	impl Circle {//imply the function to struct 'Circle'
+		fn area(&self) -> f64{
+			//method,need 'self' parameter
+			std::f64::consts::PI * (self.radius * self.radius)
+		}
+		fn (x: f64, y: f64, radius: f64) -> Circle {
+			//associated function, no 'self' parameter
+			Circle {
+				x: x,
+				y: y,
+				radius: radius,
+			}
+		}
+	}
+	
+	fn main()
+	{
+		let c =Circle::new(0.0,0.0,2.0);//associated function '::'
+		println!("area is {}",c.area);//method '.'
+	}'
+println!: print somthing with new line (it is like 'printf("\n")')
+		  if you want to use variable to print you can use '{}'
+		  (ex:println!("hello {}",var))
+let: let binds the value and variable and define statement
+	 Document saids 
+	 'Variable bindings have a scope-they are cinstrained to live in a block
+	 they were defined in'
+	 this means out of the scope, you can't use variable in scope
+	 additionally,variable binding can be shadowed with same variable
+	 look at the this code
+	 '
+	 let x: i32=8;
+	 {
+		println!("{}",x);//prints "8"
+		let x=12;
+		println!("{}",x);//prints "12"
+	 }
+	 println!("{}",x);//prints "8"
+	 let x =42;
+	 println!("{}",x);//prints "42"
+	 'if you set another type on already set value, then variable have 
+	 that type and previous type value is destroyed 
+	 Note that let variable set const value so it can't change the value
+	 but how about you want to cahnge the value temperary?
+	 in another programing language,you must set many variables
+	 it would be hard to handle the all variables but in Rust,
+	 you just rebind the variable so you can use just one variable
+	 look at this code
+	 '{
+		 let x=...;//just initialize
+		 let mut x=x;//you can change the x temparary
+		 let x=x;//and now x is const value
+	 }'so scope is verry important thing scope can use different option
+	  and widely one variable can use various way this is the powerful
+	 feature of the rust 
+	 there are the 'iterior mutability', 'exterior mutability'
+	 note that immutability is not const data they can be changed but
+	 not in scope that define binding look at this code
+	 'use std::cell::Cell;
+	 let c=Cell::new(4);
+	 c.set(10)'if you run this code then c would have 10
+	 before we learned that immutable said const value but it is wrong
+	 it is just don't allow to mutate the variable in binding scope but
+	 you can use the variable and further use variable's function 
+	 even though that function have mutate active, you can do that and
+	 change the value,because that is not mutate the variable it just use that
+	 let don't mention the inner active let just concern about its binding 
+	 this work is called 'exterior mutability'(it is like c++ class private:) 
+	 'iterior mutability' is opposite, (it is like c++ class public)
+	 it can mutate the variable in binding scope
+	 -'pattern': it can bind several variables (ex: let (x,y) = (2,3);)
+	 -'type annotation': let provide no type variable but if you wana set
+	 					 type on variable you can set type like this
+						 'let var: i32=5' this means 'var' will be used
+						 as '32bit signed integer'
+						 -some types
+						 -i32:'32bit signed integer'
+						 -u32:'32bit unsigned integer'
+						 -f64:'64bit float'
+						 -isize,usize:variable size depends ons machine
+						 architecture(i:signed,u:unsigned) 
+	variable can not use if there is no binding so if you run this code
+	'let x: 32; println!("hello");'then cause warnig 'unused variable'
+	if you run 'println!("hello {}",x) then cause error becasue you use 
+	uninitialized variable 
+array: sequence of the variables 'let x=[1,1,1];'or'let x=[1;3]' they are 
+	   same array in second array '1' means the inithialize number and
+	   '3' means the length of the array and there is 'Slice' is slice the 
+	   reference to array and they can set range to access in array
+	   (ex: let x=&y[1..4]) this means x can access to '1<=y<4'(by index)
+	   if you want to index into the variable then you must variables in
+	   'usize' if you not then cause the error
+tuple: it is the set of several values; like 'let x=(1,2,"hello")'
+	   it cna acess like this'x.0,x.1,x.2' it start 0(like array) 
+mut:let provide variable unchanged so if you run code like this
+	'let x=5; x=10'that cause error mut can available to change the variable
+io::stdin().read_line(&var): get the value by line
+			stdin():get the value
+			read_line(&var):by line and put the value on 'var'
+			it return 'io::Result'
+expect("Error Message"): if method have error display the "Error Message"
+						 this method include in 'io:Result' so it can use
+						 like 'io:stdin().read_line(&var).expect("Error")'
+String::new(): make new string varialbe(ex:let mut guess=String::new())
+rand::thread_rng().gen_range(num1,num2):method of get rand number between
+										num1~num2
+										thread_rng():get rand number
+										gen_range(num1,num2):between 
+										num1~num2
+trim(): String method that eliminate any white space at the beginnig and 
+		end of the string(ex:string.trim()) 
+parse(): String method that conver string to number
+loop{'expression'}: repeat the 'expression' if there is 'break' break the
+					loop
+match 'x'{value => expression}: if 'x'=value then do expression
+								(it is like switch(x){case value: expression
+								})
+num1.cmp(num2):compare num1 and num2 it return in 'Ordering'(enum)
+			   -Ordering::Less: 	num1<num2
+			   -Ordering::Greater: 	num1>num2
+			   -Ordering::Equal:  	num1=num2
+match: is the upgrade version of 'switch' this is the code of the match
+	   'match x {
+	   		1 => expression1,
+			2 => expression2,
+			3 => expression3,
+			4 => expression4,
+			5 => expression5,
+			_ => expression_default,
+	   }' like 'switch' match take the value 'x' and if find the equal value then 
+	   match do expression but if match can't find proper value then match do
+	   expression_default('_' is like 'default') general use '_' is ignore the value
+	   look this code 'let (x,_) = tuple' tuple have the (x,s) and copy only x (not s)
+	   and also '_' means that temparay variable
+	   and it is useful destructing here is code
+	   'struct Point{
+	  		x: i32,
+			y: i32,
+	   }
+	   
+	   let origin =Point {x: 0,y: 0};
+	   
+	   match origin{
+	   		Point{x: x1,y: y1} => println!("{},{}",x1,y1),
+	   }' before we use the struct, we have to use '.' to access variable
+	   but match destruct struct and proide the value of the variable
+	   if you want to destruct some of the struct then you can use like 'Point(y,..)'
+	   then you have the value of 'y'(rest is not destructed)
+	   if you want to have the value by reference then code like this 
+	   'match x {
+	   		ref mut r => println!("{}",r);
+	   }' that means r is the mutable reference and have value of x
+	   why is neccessary is if you use x in resource then you would better to keep 
+	   ownership of resource so reference will help you 
+	   you can use 'if' in match like this
+	   '4 | 5 if y' this means that if input value is 4 or 5 and y is true
+	   then do it 
+if: if is like the other programing 'if' but rust provide the statement
+	so if you use like this,'let x=if y==4 {10}else{9}' this means
+	if yis equals to 4 then return 10 else 9
+loop: provide the infinite loop so you have to insert the 'break';
+while 'condition'{}: if condition is true then repeat the routine until 
+					 condition is false
+for var in expression{code}: is the repeat routin, it is used in 
+							iterator item so expression must have the
+							'Intoiterator' but if want to use for count
+							code like this
+							'for x in 0..10{code}'this would run '0<=x<10'
+							and there is the interesting function 
+							'enumerate()' this functio return the 
+							(index,value) so you can know the how many you 
+							looped and its value look at this line
+							'let lines ="hello\nworld".lines();
+							for (linenumber, line) in lines.enumerate()
+							{
+								println!("{}: {}",linenumber,line);
+							}'
+vector: is a dynamic 'growable' array you can use let v=vec![1,2,3];
+		its index is like array
+struct: is the set of the variables like this
+		'struct Point3d{
+			x: i32,
+			y: i32,
+			z: i32,
+		}' struct have to return value so they have the semicolon
+		but if you want to inner process then you can insert the
+		process by expression with semicolon 
+		and in use,'let point =Point3d{x:0,x:0,z:0};'
+		then you can acess variable like 'point.x'(like tuple)
+		as you know that struct is imutable by default
+		if you want to change the value then you can use 'mut'
+		and reference to struct is easy to make like this
+		'struct PointRef<'a>{
+			x: &'a i32,
+			y: &'a i32,
+			z: &'a i32,	
+		}'you would know more about the reference i think
+		if you want to get value of struct and set another value into
+		the struct then code like this
+		'let origin = Point3d{x: 0,y: 0,z: 0};
+		let point =Point3d{z: 1,..origin};'this means point have new z and
+		origin's x,y 
+		if it have 'mut' then you can do like this by itself
+		additionaly there is the tuple struct look at this
+		'struct Color(i32,i32,i32);
+		struct Point(i32,i32,i32);
+		
+		let black = Color(0,0,0);
+		let origin = Point(0,0,0);'
+		unlike normal struct ,tuple struct acess there member in index
+		(ex: black.0) and it is useful to use 'distructing let' if there is
+		the value to you want in the tuple then you can use like this
+		'let (num1,num2,num3)=black;'because it is the tuple you can use
+		this way and num1,num2,num3 have that value of cause you can use 
+		like this 'let num1=black.0;'but it is hard to code it seperately
+		there is the Unit-like struct it means you can define the struct 
+		with no member like this 'struct Electron{}' 
+		or 'struct Proton;'
+enum: type  that represnts data is one of several possible variants
+	  here is the example of the enum
+	  'enum Message{
+	  	Quit,
+		ChangeColor(i32,i32,i32),
+		Move{x: i32,y: i32},
+		Write(String),
+	  }' each variant in the enum can optionally have data associated with it
+	  you don't have to initialize all of them (unlike struct) enum is a single type
+	  a value of the enum can match any of the variants(sum type)
+	  if you want to use variant in enum then use like this
+	  'Message::Move {x: 3,y: 4}'you have to use '::'
+	  and there is useful way with enum look at this code
+	  'fn quit(){}
+	  fn change_color(r: i32,g: i32,b: i32){}
+	  fn move_cursor(x: i32,y: i32){}
+	  
+	  fn process_message(msg: Message)
+	  {
+		  match msg{
+		  		Message::Quit => quit(),
+				Message::ChangeColor(r,g,b) => change_color(r,g,b),
+				Message::Move{x: x,y: y} => move_cursor(x,y),
+				Message::Write(s) => println!("{}",s),
+		  };
+	  }' 'msg' have the several type so match can do with it enum have each value so
+	  it is useful to use
+	  you can match multiple patterns with '|' like this
+	  'match x {
+	  		1 | 2 => println!("one or two"),
+			_ => println!("anything"),
+	  }'if x is 1 or 2 then print 'one or two' but if you want range then use like this
+	  'match x {
+	  		1 ... 5 => println!("one through five"),
+			_ => println!("something else"),
+	  }'
+	  we can bind the value by '@' look at this code
+	  'match x {
+	  		e @ 1 ... 5 | e @ 6 ... 10 => println!("got a range element {}",e),
+			_ => println!("anything"),
+	  }'e' will have the value of 'x' but 'e' is valid during the one range 

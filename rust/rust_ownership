@@ -1,0 +1,63 @@
+rust has focus on safety and speed
+they accomplishes these goals through 'zero-cost abstraction'
+'ownership' means that if you are out of the scope then you can't access that scope
+this is verry important and it is the reason why rust is safety
+but this concept would be considered in 'pointer' 
+rust forbid the variables have the same pointer
+so if you use the function with vector,you should consider ownership
+verry important but there is the way to remain the original binding
+'Copy' treat this way but it is little hard to define
+but if you just want to use it(not own the resource) then you can use 'reference''&'
+this is not binding just use the resource it is verry important 
+but references are immutable if you want to mutable reference then use '&mut'
+like this 'let y=&mut x;' this means 'y' borrow 'x' ownership
+('y' have aceess to 'x') so '*y==x'('*'is the reference sign) not 'y=x' 
+because their statement is not same x have '5' and
+y have 'reference of x' so if you want to edit x then use '*y'
+there is the rule for borrowing
+1.any borrow must last for a scope no greater than that of the owner
+this means (O:original scope,B:borrow scope,B<O,not(O=B,B>o))
+(O=B means you can't use same scope Borrow and Original)
+if you use like this
+'let y: &32;
+{
+	let x=5;
+	y=&x;
+}' this cause error because reference scope is larger then original(B>O) 
+2.one or more references (&T) to a resource
+  exactly one mutable reference(&mut T)(verry important)
+  (both at the same time is forbid) and if you use the reference more than
+  once then latest reference would have the reference to resource and if
+  reference in same scope then you can't acess reosurce and borowers can
+  sharw the reference (imutable<->imutable,mutable<->mutable)
+this rule prevent the datarace
+if you use the like this
+'let mut v = vec![1,2,3];
+
+for i in &v{
+	println!("{}",i);
+	v.push(20)
+}'v use imutable reference so it cause the error,v don't have the right 
+to mut
+lifetime is the scope that a reference is valid if you use in function
+'fn foo<'a>(x: &'a i32){}' this means that 'the lifetime 'a''
+('<>' is used as declare lifetime) why is it important?
+because rust remove the variable after use so so if you don't write lifetime
+parameter, then reference would not be able to last for long time
+here is the code look carfully
+'struct Sheep{
+	age: &i32,
+}
+
+fn main(){
+	let a=3;
+	let s=Sheep{age: &a};
+	println!("{}",s);}'
+	this cause the error because struct 'Sheep' doesn't 
+	told how long stay around so if you want to work well,then code this
+	'struct Sheep<'a>{
+		age: &'a i32,
+	}'you must note that every refernce have lifetime so know that lifetime
+	and set lifetime of variable is verry important 
+	but if you want to have entire program lifetime 'static' would be
+	helpful

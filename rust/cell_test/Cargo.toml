@@ -1,0 +1,6 @@
+[package]
+name = "cell_test"
+version = "0.1.0"
+authors = ["maxtnt <ttg1256@naver.com>"]
+
+[dependencies]

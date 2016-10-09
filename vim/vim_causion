@@ -1,0 +1,5 @@
+c-s:enable terminal scroll lock
+c-q:disable terminal scroll lock
+
+to disable this feature edit '~/.bash_profile' or '~/.bashrc' like this
+'sitty -ixon'
