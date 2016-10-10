@@ -8,7 +8,10 @@ struct Point<'a>{
 	y: &'a mut Any<'a>,
 }
 fn main() {
-
+	let fuck =20;
+	let temp = Any{a: &mut 39,b: &mut 20};
+	let hello = temp;
+	let fuck2=fuck;
     let mut x =&mut Point{x: &mut Any{a: &mut 10 ,b: &mut 20},y: &mut Any{a: &mut 20,b: &mut 28}};
 	{
 		let mut y=&mut x;
@@ -20,4 +23,6 @@ fn main() {
 		println!("{},{}",*z.x.a,*z.y.b);
 	}
 	println!("{},{}",*x.x.a,*x.y.b);
+	println!("{}",fuck);
+	println!("{},{}",*hello.a,*hello.b);
 }

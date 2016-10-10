@@ -43,7 +43,8 @@ and there is the rule of triat
    as the impl you're writing 
    this means that if you implement the some datastruct by trait that 
    undifined in your scope that is forbiden in rust 
-   so using 'impl' by undifined trait is illegal  
+   so using 'impl' by undifined trait is illegal 
+    
 so rule 1 is for use and rule 2 is for implementing
 if you want multiple trait then use like this
 'fn foo<T: trait1 + trait2,K: trait3>(){}' so T now needs to be both 2traits
@@ -51,5 +52,90 @@ but foo function is not cool because '<>' is too long so there is the
 solution it is called a 'where clause' look at this code
 'fn foo<T, K>(x: T,y: K) where T :trait1 + trait2, K: trait3'
 it looks so readable it is usefule 
-  	 
-   
+and trait also have the generic type look at this code 
+'trait ConverTo<Output>{
+	fn convert(&self) -> Output;
+}
+impl ConvertTo<i64> for i32{
+	fn convert(&self) -> i64 {*self as i64}
+}
+fn normal<T>(x: &T) -> i64
+		whrer T: ConvertTo<i64>{
+}
+fn inverse<T>(x: i32) -> T
+		where i32: ConvertTo<T>{
+}'  	 
+so 'Output' can change the type like 'i32','f64' anything
+and also you can use 'where' this means that you can use where not only 
+generic but also another type (i32) it is hard to understand logic at it is
+simple first have the input type and extract the input type and insert the 
+function type and finally insert fuction type to return type
+input type is just variable's information and fuction type is that is used
+in function body and finally return type is just return type
+and trait also can have the function body
+this is called default function look at this
+trait Foo{
+	fn is_valid(&self) -> bool;
+	fn is_invalid(&self) -> bool{!self.is_valid()}
+}
+invalid function is default function so after imply you can use 
+this function  
+if you override the function then  you can use this not default
+and also provide the inheritance look at this code
+trait Foo{
+	fn foo(&self);
+}
+trait Foobar : Foo{
+	fn foobar(&self);
+}
+Foobar have the Foo function if you want to implement Foobar then 
+you must implement Foo too look at this code
+struct Baz;
+
+impl Foo for Baz{
+	fn foo(&self){println!("foo");}
+}
+impl Foobar for Baz{
+	fn foobar(&self){println!("foobar");}
+}
+
+i think its purpose is to make trait at once if we want to use this we must 
+define the trait in your code that is so hard to use so it is the rust 
+purpose
+
+because of the trait rule it is not cool to use trait so that reason 
+rust provide the attribute that allow you to let Rust automatically
+implement traits for you like this
+#[derive(Debug)]
+if you use like this you can use Debug trait by default
+there is the trait object that trait can use like object this is useful when 
+we want to know the mechanism on object this is called 'dispatch' if you use like this
+'fn do_something(x: &Foo)
+{
+	x.method();
+}'
+and next code
+'{
+	let x =5u8;
+	do_something(&x);
+}'
+this code works well it is strange that we use the &x why? i study about this and find
+it 'x' is 'u8' and '&x' is '&u8' and also '&Foo' 'Foo' is the trait that have the 
+function list but if we use the '&Foo' '&Foo' save the variable type so by '&Foo'
+it can discuss the function according to type 
+i think x is just type but if you use reference x (&x), &x contains the all reference 
+about type (in this case &Foo contains) and &Foo contains the variable type so
+it can choose the function accoding to type   
+that is all what i know about trait object it is not clear now
+ok i will add content someday 
+but it is not safe to use trait object in variable 
+because they are not data struct this is called 'object safety'
+but some of trait is allowed to use trait object in variable 
+there is the rule to use trait object in variable 
+1. must not have any type parameters
+2. must not use Self
+-----------some trait-------
+Drop: Drop is the Rust standard trait,the Drop trait provide a way to run
+	  some code when a value goes out of scope in trait there is the 
+	  function drop this function do when variable is out of the scope
+	  	

@@ -1,4 +1,10 @@
 use: use the package(it is like#include <> or using ~~)(ex: use std::io)
+	 no that is not using package but do well previous me
+	 it is the code that use the trait yeh previous me can't know about this
+	 but this is the real meaning according to trait rule trait must be defined in scope
+	 to use trait function but it would be hard to write the definition on your scope
+	 so rust provide the code instead of using defintion that is 'use' 
+	 now previous me do you understand it?   
 	 -std:standard group-io:group of input,output
 	 					-cmp:group of compare
 	 -rand:rand group	-Rng:it maybe rand group
@@ -136,6 +142,20 @@ let: let binds the value and variable and define statement
 	'let x: 32; println!("hello");'then cause warnig 'unused variable'
 	if you run 'println!("hello {}",x) then cause error becasue you use 
 	uninitialized variable 
+	and there is the few trick with let look at this code 
+	'match option{
+			Some(x) => {foo(x)},
+			None => {},
+	}'you already know the match function yeh that means if it is right type
+	then do something but other case do nothing how about this code
+	'if let Some(x)=option{
+		foo(x);
+	}'yeh this code is same defore code because Rust provide the pattern matching
+	'if let' is the grammer that if binding or matching is sucessful then do inner code
+	so it is useful with pattern matching 
+	and also there is the 'while let 'this means if binding and matching is successful
+	then repeat the inner code until not there is keyword 'for' do like this
+	yes do your favor 
 array: sequence of the variables 'let x=[1,1,1];'or'let x=[1;3]' they are 
 	   same array in second array '1' means the inithialize number and
 	   '3' means the length of the array and there is 'Slice' is slice the 
@@ -276,8 +296,10 @@ enum: type  that represnts data is one of several possible variants
 		ChangeColor(i32,i32,i32),
 		Move{x: i32,y: i32},
 		Write(String),
-	  }' each variant in the enum can optionally have data associated with it
-	  you don't have to initialize all of them (unlike struct) enum is a single type
+	  }' each variant in the enum can optionally have data associated 
+	  with it
+	  you don't have to initialize all of them (unlike struct) 
+	  enum is a single type
 	  a value of the enum can match any of the variants(sum type)
 	  if you want to use variant in enum then use like this
 	  'Message::Move {x: 3,y: 4}'you have to use '::'
@@ -294,13 +316,17 @@ enum: type  that represnts data is one of several possible variants
 				Message::Move{x: x,y: y} => move_cursor(x,y),
 				Message::Write(s) => println!("{}",s),
 		  };
-	  }' 'msg' have the several type so match can do with it enum have each value so
+	  }' 
+	  'msg' have the several type so match can do with it enum have 
+	  each value so
 	  it is useful to use
 	  you can match multiple patterns with '|' like this
 	  'match x {
 	  		1 | 2 => println!("one or two"),
 			_ => println!("anything"),
-	  }'if x is 1 or 2 then print 'one or two' but if you want range then use like this
+	  }'
+	  if x is 1 or 2 then print 'one or two' but if you want range 
+	  then use like this
 	  'match x {
 	  		1 ... 5 => println!("one through five"),
 			_ => println!("something else"),
@@ -309,4 +335,11 @@ enum: type  that represnts data is one of several possible variants
 	  'match x {
 	  		e @ 1 ... 5 | e @ 6 ... 10 => println!("got a range element {}",e),
 			_ => println!("anything"),
-	  }'e' will have the value of 'x' but 'e' is valid during the one range 
+	  }'e' will have the value of 'x' but 'e' is valid during the one range
+closures: it is like lamda function it allow to use function directly 
+		  unlike the lamda function it can imply the function to variable look at this
+		  'let plus_one =|x:i32| x+1;'that means just plus one but look at the next code
+		  'println!{"{}".plus_one(2)}'that will print '3' you can also extned the body
+		  by '{}' but there is no return type if you want you can add the return type
+		  but it is useless because making function is better than using closure 
+		  and is not allow to use no argument like '||'   
