@@ -1,0 +1,103 @@
+macro allow us to abstract at a syntactic level 
+it is like c++ macro but have powerful tool and can use this in flexible
+but it is hard to understand 
+if you want to make rule then code like this
+'macro_rules! foo{
+	(x => $e:expr) => (println!("mode x: {}", $e));
+}'
+then if you use like this
+'foo!(x => 3);'(if you use this macro you must put '!' after macro name)
+then will print 'mode x: 3'
+yeh you can use this by function but this is not same as function
+this is just insert the value or function into expression
+so it would be easy someway
+let's break out
+there is the 2 distinguishment in macro
+(1) => (2)
+if 1 have the value by pattern matching then will do 2
+let's look at the 1
+'x => $e:expr' it is complicated 
+$e:expr is the type that match all type in rust
+so if you put the expression into the this
+then will save into the 'e'
+in macro '$' is the kind of meaning that show the content of that
+how about the 'x'? 
+well that is just character 
+and expression that will used in output must define in statement
+don't forget this 
+do you understand that? then let's take the next step
+'macro_rules! o_O{
+	{
+		${
+			$x:expr; [$($y:expr),*]
+		},*
+	} => &[$($($x+$y),*),*]
+}
+fn main()
+{
+	let a: &[i32]=o_o!(10;[1,2,3],
+					   20;[2,3,4]);
+
+	assert_eq!(a,[11,12,13,22,23,24]);
+}'it is difficult to read use this, but let's break down
+in'$x:expr; [$($y:expr),*]', compare the below code
+10;      [  1       ,2,3]
+$x:expr; [$($y:expr),*]
+did you get it? first x will have the 10 because of the 'expr'
+and next there are '[]' macro realize this pattern, and get inside 
+there are elements distinguish with ',' in macro there is the form like
+'$(),*' that means there are several elements distinguish by ',' and i will
+repeat the this process because of '*'
+and finaly we go inside the element and now we save the value of element
+into the 'y' is it end? no there is one left
+'${},*' that is same as previous thing 
+there are several previous patterns and distinguish with ',' so repeat the 
+this process
+let's take a look output expression
+in $($x + $y),*, they add them and express 'value,' and so on rest of all 
+do yourself you can know the process
+
+unlike other macro system in other language, it is smart becuase rust 
+provide powerful pattern matching and solve the local variable problum
+in other language macro so stupid that they insurt value into the local
+because local variable have the same name
+that's terrible but rust don't have this problum
+because each variable is tagged with syntax contex where it was introduced
+if you want to pass the variable into other scope then code like this
+'macro_rules! foo{
+	($v:ident) => (let $v =3;);
+}'
+fn main()
+{
+	foo!(x);
+	println!("{}",x);
+}' it will print 3
+
+macro do more things example html but it is hard to write in here so
+look at the document macro it will be helpful
+
+if you want to use extern macro then use like this
+'#[macro_use(foo,bar)]
+extern crate baz;'
+and if you wnat to use the inner macro then use this
+'#[macro_use]
+{
+	inner macro
+}'
+then you can use the inner macro
+there are some macro that built in rust
+panic!: this macro cause the current thread to panic and give the message
+vec!: it creates Vec<T> with ease
+assert!:this macro is test macro that take the boolean 
+assert_eq!:this macro is also test macro that takes two values and checks 
+		   them for equality if true pass,false panic!s
+try!:it is used for error handling it takes something that can return a
+	 Result<T, E> look at this code 
+	 fn foo() -> std::io::Result<()>{
+	 	let f =try!(File::create("foo.txt"));
+
+		Ok(())
+	 }
+unreachable:this macro is for preventing to go wrong if code goes wrong then
+			give you the panic!
+
