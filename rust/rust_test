@@ -1,0 +1,17 @@
+rust provide the test tool
+if we make the rust project in cargo i would see this function in lib.rs
+'#[test]
+fn it_works(){
+}'
+'#[test]' this attribute indicate that this is a test function
+so if you use 'cargo test' then rust test the function and get the result
+if function goes wrong, cargo will give the fail
+(additionaly if function have #[should_panic],although function cause the 
+panic, test said it is passed)
+if you have function that want not to be tested then there #[ignore]
+if you want confige the function then use #[cfg(any(),not(),all())]
+cfg can also use as function like this
+'if cfg!(target_os ="macos")||cfg!(target_os="ios")
+{
+	println!("Think Different!");
+}' 

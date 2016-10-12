@@ -155,7 +155,9 @@ let: let binds the value and variable and define statement
 	so it is useful with pattern matching 
 	and also there is the 'while let 'this means if binding and matching is successful
 	then repeat the inner code until not there is keyword 'for' do like this
-	yes do your favor 
+	yes do your favor
+Box: it allow you tu allocate the heap like this 'let x =Box::new(3);' x have the address
+	 of '3' that means x have the raw pointer to heap 
 array: sequence of the variables 'let x=[1,1,1];'or'let x=[1;3]' they are 
 	   same array in second array '1' means the inithialize number and
 	   '3' means the length of the array and there is 'Slice' is slice the 
@@ -249,7 +251,19 @@ for var in expression{code}: is the repeat routin, it is used in
 								println!("{}: {}",linenumber,line);
 							}'
 vector: is a dynamic 'growable' array you can use let v=vec![1,2,3];
-		its index is like array
+		its index is like array it would be helpful to use 'collect()'
+		this returns the set of the value if you code like 'let x = 1..100;'
+		rust can't do with because it is just range so collect make the set of
+		range in advance there is find(closure)
+		this function make the set of value which satifying the cloure
+		if closure is true then make the set of value
+		fold(base,|accumulator,element|{}) this function does calculate the element 
+		and make set of values 
+		map(closure) is the iterator adapter that produce the new iterator 
+		with calculation 
+		take(n) will return an iterator over the next n elements of the original iterator
+		filter(closure) is an adapter that takes a closure return true for
+
 struct: is the set of the variables like this
 		'struct Point3d{
 			x: i32,
@@ -343,3 +357,14 @@ closures: it is like lamda function it allow to use function directly
 		  by '{}' but there is no return type if you want you can add the return type
 		  but it is useless because making function is better than using closure 
 		  and is not allow to use no argument like '||'   
+Treads: rust provide concurrency with no error here is the simple code
+		'fn main()
+		{
+			thread::spawn(||{println!("Hello from a threa");}
+		}'generally thread run by closure you can use thread by std::thread
+		if you want to use normaly then you will need 'sync::{Arc,Mutex}'
+		Arc can safely be accessed from multiple thread
+		Mutex can protect the shared data
+channel: it provide the channel and get data each chennel you can use channel by 
+		 std::sync::mpsc
+

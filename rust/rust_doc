@@ -1,0 +1,17 @@
+document is an important part of any software project
+if you want to comment the program then use like this
+'///somthing'
+there are some rules to write document
+///#Panics: it refer the Unrecoverable misuses of a function
+///#Errors: it refer error
+///#Safety: if you use the 'unsafe' then it will be better refer that
+///#Example: show the example of function
+and if you write the rust code on document then write like this
+///'''
+///println!("Hello,world");
+///'''
+if you use the another programing code use like this
+///'''c
+///printf("hello");
+///'''
+
