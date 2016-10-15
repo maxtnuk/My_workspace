@@ -1,0 +1,8 @@
+Rc<T>: refernce counted pointer this lets us have multiple owning pointers
+	   to the same data, and the data will be dropped when all pointers 
+	   are out of scope 
+	   it is a viable alternative to &T
+Weak<T>: this is a non-owning,but also non-borrowed,smart pointer
+Cell<T>: type that provides zero-cost interior mutability
+RefCell<T>: enforces the read write lock pattern at runtime
+
