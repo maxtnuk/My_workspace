@@ -1,0 +1,8 @@
+[package]
+name = "sierpinski_upgrade"
+version = "0.1.0"
+authors = ["maxtnuk <maxtnuk@gmail.com>"]
+
+[dependencies]
+rand="*"
+image="*"
