@@ -22,7 +22,9 @@ fn main() {
 		*(***z).y.b=10;
 		println!("{},{}",*z.x.a,*z.y.b);
 	}
+    let hell=5;
 	println!("{},{}",*x.x.a,*x.y.b);
 	println!("{}",fuck);
 	println!("{},{}",*hello.a,*hello.b);
+    println!("{}",hell/2);
 }

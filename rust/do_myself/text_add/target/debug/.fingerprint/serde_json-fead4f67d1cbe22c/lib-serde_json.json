@@ -1,0 +1,1 @@
+{"rustc":2227135370671807109,"target":4948866481138853484,"profile":11154289914177168617,"local":{"variant":"Precalculated","fields":["0.8.3"]},"features":"None","deps":[["dtoa v0.2.2",11156507149637398341],["itoa v0.1.1",5080172389524092718],["num-traits v0.1.36",3515304558281796120],["serde v0.8.17",990955325929332268]],"rustflags":["--error-format=json"]}

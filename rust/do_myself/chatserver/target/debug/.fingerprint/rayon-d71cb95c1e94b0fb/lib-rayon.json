@@ -1,0 +1,1 @@
+{"rustc":16155362085691484018,"target":13526515216943063808,"profile":11154289914177168617,"local":{"variant":"Precalculated","fields":["0.5.0"]},"features":"None","deps":[["deque v0.3.1",13156478037475617984],["libc v0.2.17",13883684421749898319],["num_cpus v1.1.0",10327770872516533144],["rand v0.3.14",17997293708598430827]],"rustflags":["--error-format=json"]}

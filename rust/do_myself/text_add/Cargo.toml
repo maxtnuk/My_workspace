@@ -1,0 +1,7 @@
+[package]
+name = "text_add"
+version = "0.1.0"
+authors = ["maxtnuk <maxtnuk@gmail.com>"]
+
+[dependencies]
+native-windows-gui="0.1.0"
