@@ -1,0 +1,7 @@
+[package]
+name = "gtk_test"
+version = "0.1.0"
+authors = ["maxtnuk <maxtnuk@gmail.com>"]
+
+[dependencies]
+gtk="0.1.1"

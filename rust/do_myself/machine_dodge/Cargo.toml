@@ -1,0 +1,7 @@
+[package]
+name = "machine_dodge"
+version = "0.1.0"
+authors = ["maxtnuk <maxtnuk@gmail.com>"]
+
+[dependencies]
+leaf="0.2.1"s

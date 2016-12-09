@@ -1,0 +1,1 @@
+{"rustc":2227135370671807109,"target":2387826793120004957,"profile":11154289914177168617,"local":{"variant":"Precalculated","fields":["0.3.5"]},"features":"Some([\"default\", \"regex\"])","deps":[["log v0.3.6",10639347470090589218],["regex v0.1.80",2415662192686126973]],"rustflags":[]}
