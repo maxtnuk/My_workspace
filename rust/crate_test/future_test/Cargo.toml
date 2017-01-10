@@ -1,0 +1,9 @@
+[package]
+name = "future_test"
+version = "0.1.0"
+authors = ["maxtnuk <maxtnuk@gmail.com>"]
+
+[dependencies]
+futures="*"
+tokio-core = "0.1"
+tokio-tls = { git = "https://github.com/tokio-rs/tokio-tls" }

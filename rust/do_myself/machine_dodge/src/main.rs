@@ -1,6 +1,6 @@
-extern crate leaf;
+extern crate machine_dodge;
+use machine_dodge::background;
 
 fn main() {
-    let liner1: LinearConfig = LinearConfig::new("outline", LinearConfig { output_size: 500 });
-
+    background::ground();
 }

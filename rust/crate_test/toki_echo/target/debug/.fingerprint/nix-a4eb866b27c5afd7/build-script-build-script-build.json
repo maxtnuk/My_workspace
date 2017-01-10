@@ -1,0 +1,1 @@
+{"rustc":2227135370671807109,"target":4086851835445132369,"profile":11154289914177168617,"local":{"variant":"Precalculated","fields":["0.7.0"]},"features":"None","deps":[["rustc_version v0.1.7",6251968671954672293],["semver v0.1.20",16663942051711205797]],"rustflags":[]}

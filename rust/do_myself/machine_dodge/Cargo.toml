@@ -4,4 +4,5 @@ version = "0.1.0"
 authors = ["maxtnuk <maxtnuk@gmail.com>"]
 
 [dependencies]
-leaf="0.2.1"s
+piston_window = "0.44.0"
+rand="*"

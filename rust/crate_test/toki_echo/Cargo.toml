@@ -1,0 +1,9 @@
+[package]
+name = "toki_echo"
+version = "0.1.0"
+authors = ["maxtnuk <maxtnuk@gmail.com>"]
+
+[dependencies]
+env_logger="*"
+futures="*"
+tokio-core="*"

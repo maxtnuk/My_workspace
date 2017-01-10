@@ -1,0 +1,1 @@
+{"rustc":12086005706739577191,"target":17030417261819062173,"profile":11154289914177168617,"local":{"variant":"Precalculated","fields":["0.2.1"]},"features":"None","deps":[["arrayvec v0.3.20",3486833381974751094],["linked-hash-map v0.0.10",2313821310367899001],["stb_truetype v0.2.0",10580640562937406679]],"rustflags":[]}

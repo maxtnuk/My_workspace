@@ -1,0 +1,1 @@
+{"rustc":2227135370671807109,"target":7855832797809258383,"profile":11154289914177168617,"local":{"variant":"Precalculated","fields":["0.27.0"]},"features":"None","deps":[["pistoncore-event_loop v0.27.0",3404276455598778521],["pistoncore-input v0.15.0",10586629364635097510],["pistoncore-window v0.24.0",2490198792908576245]],"rustflags":[]}
