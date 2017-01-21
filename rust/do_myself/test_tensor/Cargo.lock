@@ -1,0 +1,40 @@
+[root]
+name = "test_tensor"
+version = "0.1.0"
+dependencies = [
+ "tensorflux 0.8.2 (registry+https://github.com/rust-lang/crates.io-index)",
+]
+
+[[package]]
+name = "libc"
+version = "0.2.20"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+
+[[package]]
+name = "pkg-config"
+version = "0.3.8"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+
+[[package]]
+name = "tensorflux"
+version = "0.8.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+dependencies = [
+ "libc 0.2.20 (registry+https://github.com/rust-lang/crates.io-index)",
+ "tensorflux-sys 0.1.1 (registry+https://github.com/rust-lang/crates.io-index)",
+]
+
+[[package]]
+name = "tensorflux-sys"
+version = "0.1.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+dependencies = [
+ "libc 0.2.20 (registry+https://github.com/rust-lang/crates.io-index)",
+ "pkg-config 0.3.8 (registry+https://github.com/rust-lang/crates.io-index)",
+]
+
+[metadata]
+"checksum libc 0.2.20 (registry+https://github.com/rust-lang/crates.io-index)" = "684f330624d8c3784fb9558ca46c4ce488073a8d22450415c5eb4f4cfb0d11b5"
+"checksum pkg-config 0.3.8 (registry+https://github.com/rust-lang/crates.io-index)" = "8cee804ecc7eaf201a4a207241472cc870e825206f6c031e3ee2a72fa425f2fa"
+"checksum tensorflux 0.8.2 (registry+https://github.com/rust-lang/crates.io-index)" = "f6f13ce2d3c80b4a4e77db7ab2869ecb191a23b116b43778525aeb45bbf3be43"
+"checksum tensorflux-sys 0.1.1 (registry+https://github.com/rust-lang/crates.io-index)" = "4064bd0503fe53a7f479a41c1f04827cc07ef594829c149717a29532bab7db6f"

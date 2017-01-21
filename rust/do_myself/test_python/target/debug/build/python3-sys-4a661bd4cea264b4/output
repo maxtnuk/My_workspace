@@ -1,0 +1,6 @@
+cargo:rustc-link-lib=python3.5m
+cargo:rustc-link-search=native=/usr/lib
+cargo:rustc-cfg=Py_3_4
+cargo:rustc-cfg=Py_3_5
+cargo:rustc-cfg=py_sys_config="WITH_THREAD"
+cargo:python_flags=FLAG_WITH_THREAD=1

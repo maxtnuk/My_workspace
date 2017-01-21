@@ -1,1 +1,0 @@
-{"rustc":2227135370671807109,"target":14320881701864046491,"profile":11154289914177168617,"local":{"variant":"Precalculated","fields":["0.3.4"]},"features":"Some([\"collenchyma\", \"native\"])","deps":[["collenchyma v0.0.8",170291188606985542],["lazy_static v0.1.16",1971193901759081634],["libc v0.2.17",11326400855271173111],["log v0.3.6",10639347470090589218]],"rustflags":[]}

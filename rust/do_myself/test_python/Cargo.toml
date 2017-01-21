@@ -1,0 +1,8 @@
+[package]
+name = "test_python"
+version = "0.1.0"
+authors = ["maxtnuk <maxtnuk@gmail.com>"]
+
+[dependencies]
+rust_mixin = "*"
+external_mixin = "*"
