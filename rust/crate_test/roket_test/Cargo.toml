@@ -1,0 +1,9 @@
+[package]
+name = "roket_test"
+version = "0.1.0"
+authors = ["maxtnuk <maxtnuk@gmail.com>"]
+
+[dependencies]
+rocket = "0.1.5"
+rocket_codegen = "0.1.5"
+rand="*"
