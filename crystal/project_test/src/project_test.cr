@@ -1,5 +1,5 @@
 require "./project_test/*"
 
 module ProjectTest
-  # TODO Put your code here
+  puts "hello"
 end

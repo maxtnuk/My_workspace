@@ -1,0 +1,7 @@
+[package]
+name = "rain"
+version = "0.1.0"
+authors = ["maxtnuk <maxtnuk@gmail.com>"]
+
+[dependencies]
+rain = "0.3.1"
