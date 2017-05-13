@@ -1,0 +1,14 @@
+[root]
+name = "whiteread"
+version = "0.1.0"
+dependencies = [
+ "whiteread 0.3.0 (registry+https://github.com/rust-lang/crates.io-index)",
+]
+
+[[package]]
+name = "whiteread"
+version = "0.3.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+
+[metadata]
+"checksum whiteread 0.3.0 (registry+https://github.com/rust-lang/crates.io-index)" = "02f782f9b62ec7e287dc0014ea9b45f16d1e766cfd3d4d98391d0be7761dadf1"

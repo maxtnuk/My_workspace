@@ -1,0 +1,10 @@
+[package]
+name = "android"
+version = "0.1.0"
+authors = ["maxtnuk <maxtnuk@gmail.com>"]
+
+[package.metadata.android]
+label = "Basic android-rs-glue example"
+
+[dependencies]
+android_glue = "0.2.2"

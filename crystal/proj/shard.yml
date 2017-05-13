@@ -1,0 +1,18 @@
+name: proj
+version: 0.1.0
+
+authors:
+  - maxtnuk <maxtnuk@gmail.com>
+
+targets:
+  proj:
+    main: src/proj.cr
+
+crystal: 0.20.5
+
+license: MIT
+
+dependencies:
+  kemal:
+    github: kemalcr/kemal
+    branch: master

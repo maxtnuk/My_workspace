@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.maxtnt.test_android.MainActivity">
+
+    <Button
+        android:id="@+id/topButton"
+        android:text="top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="whole"
+        android:background="#ff00ffff"
+        android:layout_above="@+id/backButton"
+        android:layout_below="@+id/topButton"
+        android:gravity="center"
+        />
+    <Button
+        android:id="@+id/backButton"
+        android:text="돌아가기"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:onClick="click_back" />
+</RelativeLayout>

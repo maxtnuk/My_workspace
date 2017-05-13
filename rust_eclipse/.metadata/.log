@@ -1,0 +1,52 @@
+!SESSION 2017-02-28 13:02:51.236 -----------------------------------------------
+eclipse.buildId=4.6.1.M20160907-1200
+java.version=1.8.0_121
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=ko_KR
+Command-line arguments:  -os linux -ws gtk -arch x86_64
+
+!ENTRY org.eclipse.launchbar.core 2 0 2017-02-28 13:03:24.276
+!MESSAGE Enablement expression is missing for config provider for org.eclipse.cdt.arduino.core.descriptorType
+
+!ENTRY org.eclipse.launchbar.core 2 0 2017-02-28 13:03:24.329
+!MESSAGE Enablement expression is missing for config provider for org.eclipse.cdt.qt.core.launchDescriptorType
+
+!ENTRY org.eclipse.oomph.setup.ui 1 0 2017-02-28 13:03:44.290
+!MESSAGE Setup tasks were performed during startup updating 7 preferences. See '/home/maxtnt/eclipse/ide-latest-released/eclipse/configuration/org.eclipse.oomph.setup/setup.log' for details
+!SESSION 2017-02-28 13:20:21.271 -----------------------------------------------
+eclipse.buildId=4.6.1.M20160907-1200
+java.version=1.8.0_121
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=ko_KR
+Command-line arguments:  -os linux -ws gtk -arch x86_64
+
+!ENTRY org.eclipse.launchbar.core 2 0 2017-02-28 13:20:30.617
+!MESSAGE Enablement expression is missing for config provider for org.eclipse.cdt.arduino.core.descriptorType
+
+!ENTRY org.eclipse.launchbar.core 2 0 2017-02-28 13:20:30.618
+!MESSAGE Enablement expression is missing for config provider for org.eclipse.cdt.qt.core.launchDescriptorType
+!SESSION 2017-03-04 01:31:49.157 -----------------------------------------------
+eclipse.buildId=4.6.1.M20160907-1200
+java.version=1.8.0_121
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=ko_KR
+Command-line arguments:  -os linux -ws gtk -arch x86_64
+
+!ENTRY org.eclipse.launchbar.core 2 0 2017-03-04 01:32:03.202
+!MESSAGE Enablement expression is missing for config provider for org.eclipse.cdt.arduino.core.descriptorType
+
+!ENTRY org.eclipse.launchbar.core 2 0 2017-03-04 01:32:03.212
+!MESSAGE Enablement expression is missing for config provider for org.eclipse.cdt.qt.core.launchDescriptorType
+
+!ENTRY org.eclipse.help.base 4 4 2017-03-04 01:34:44.484
+!MESSAGE Help documentation could not be indexed completely.
+!SUBENTRY 1 org.eclipse.help.base 4 4 2017-03-04 01:34:44.484
+!MESSAGE Help document /org.eclipse.cdt.doc.isv/reference/extension-points/org_eclipse_cdt_debug_core_CDebugger.html cannot be opened.
+!SUBENTRY 1 org.eclipse.help.base 4 4 2017-03-04 01:34:44.484
+!MESSAGE Help document /org.eclipse.cdt.doc.isv/reference/api/org/eclipse/cdt/debug/core/cdi/package-summary.html cannot be opened.
+!SUBENTRY 1 org.eclipse.help.base 4 4 2017-03-04 01:34:44.484
+!MESSAGE Help document /org.eclipse.cdt.doc.isv/reference/api/org/eclipse/cdt/debug/core/cdi/model/type/package-summary.html cannot be opened.
+!SUBENTRY 1 org.eclipse.help.base 4 4 2017-03-04 01:34:44.484
+!MESSAGE Help document /org.eclipse.cdt.doc.isv/reference/api/org/eclipse/cdt/debug/core/cdi/model/package-summary.html cannot be opened.
+!SUBENTRY 1 org.eclipse.help.base 4 4 2017-03-04 01:34:44.484
+!MESSAGE Help document /org.eclipse.cdt.doc.isv/reference/api/org/eclipse/cdt/debug/core/cdi/event/package-summary.html cannot be opened.

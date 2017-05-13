@@ -1,0 +1,1 @@
+/home/maxtnt/My_workspace/rust/do_myself/readvec/target/debug/libreadvec.rmeta: /home/maxtnt/My_workspace/rust/do_myself/readvec/src/lib.rs /home/maxtnt/My_workspace/rust/do_myself/readvec/src/Pvec.rs

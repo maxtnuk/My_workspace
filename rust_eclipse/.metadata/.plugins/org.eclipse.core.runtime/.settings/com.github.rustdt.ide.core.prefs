@@ -1,0 +1,7 @@
+eclipse.preferences.version=1
+format_onSave=true
+racer_path=/home/maxtnt/.cargo/RustDT/bin/racer
+rainicorn_path=/home/maxtnt/.cargo/RustDT/bin/parse_describe
+rustfmt_path=/home/maxtnt/.cargo/RustDT/bin/rustfmt
+sdk_path=/usr/local
+sdk_src_path=/home/maxtnt/rust_setting/rust/src

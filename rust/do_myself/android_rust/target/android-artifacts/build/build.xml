@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="android" default="help">
+    <property file="local.properties" />
+    <loadproperties srcFile="project.properties" />
+    <import file="custom_rules.xml" optional="true" />
+    <import file="${sdk.dir}/tools/ant/build.xml" />
+</project>

@@ -1,0 +1,5 @@
+libm.so
+libdl.so
+liblog.so
+libc.so
+libgcc.so
